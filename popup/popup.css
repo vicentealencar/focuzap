@@ -1,0 +1,85 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1f2330;
+  --muted: #6b7080;
+  --accent: #008069;
+  --accent-hover: #006e5a;
+  --btn: #eef0f5;
+  --btn-hover: #e2e5ee;
+  --paused: #b45309;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1d24;
+    --fg: #e8e9ee;
+    --muted: #9a9fb0;
+    --btn: #2a2d38;
+    --btn-hover: #343846;
+    --paused: #f59e0b;
+  }
+}
+
+body {
+  margin: 0;
+  width: 260px;
+  padding: 14px 16px 16px;
+  background: var(--bg);
+  color: var(--fg);
+  font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.status {
+  margin: 12px 0 8px;
+  font-weight: 600;
+}
+
+.status.paused {
+  color: var(--paused);
+}
+
+.note {
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  flex: 1;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--btn);
+  color: var(--fg);
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--btn-hover);
+}
+
+button.primary {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+}
+
+button.primary:hover {
+  background: var(--accent-hover);
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <img src="../icons/icon-48.png" alt="" width="28" height="28" />
+      <h1>Focuzap</h1>
+    </header>
+
+    <p id="status" class="status"></p>
+
+    <div id="focused-actions">
+      <p class="note">Need the full WhatsApp for a moment? Pausing is temporary on purpose.</p>
+      <div class="row">
+        <button data-minutes="5">Pause 5 min</button>
+        <button data-minutes="15">Pause 15 min</button>
+      </div>
+    </div>
+
+    <div id="paused-actions" hidden>
+      <button id="resume" class="primary">Resume focus now</button>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

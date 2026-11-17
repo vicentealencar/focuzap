@@ -1,0 +1,96 @@
+/*
+ * Focuzap styles. Everything is scoped under html.focuzap-on so pausing
+ * focus mode restores the stock WhatsApp Web UI instantly.
+ */
+
+/* The chat list only exists while you are actively searching. */
+html.focuzap-on:not(.focuzap-searching) #pane-side {
+  display: none !important;
+}
+
+/* Elements tagged by content.js: side header, filter chips, etc. */
+html.focuzap-on [data-focuzap-hide] {
+  display: none !important;
+}
+
+/* Left navigation rail (Status, Channels, Communities, badges...).
+   visibility instead of display so the app's grid layout doesn't shift. */
+html.focuzap-on [data-focuzap-invisible] {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Filter chips (All / Unread / Favorites / Groups). */
+html.focuzap-on #side [role="tablist"] {
+  display: none !important;
+}
+
+/* ---------- Focuzap panel injected under the search box ---------- */
+
+html:not(.focuzap-on) .focuzap-panel {
+  display: none !important;
+}
+
+.focuzap-panel {
+  padding: 20px 24px;
+  font-family: inherit;
+  color: var(--secondary, #667781);
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.focuzap-panel[hidden] {
+  display: none !important;
+}
+
+.focuzap-panel .focuzap-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary, #111b21);
+  margin: 0 0 6px;
+}
+
+.focuzap-panel .focuzap-sub {
+  margin: 0;
+}
+
+.focuzap-panel .focuzap-keys {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.focuzap-panel kbd {
+  padding: 1px 5px;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 11px;
+}
+
+.focuzap-panel .focuzap-phone {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: #008069;
+  color: #fff;
+  font: inherit;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+}
+
+.focuzap-panel .focuzap-phone:hover {
+  background: #006e5a;
+}
+
+.focuzap-panel .focuzap-phone[hidden] {
+  display: none !important;
+}
+
+html.focuzap-searching .focuzap-panel {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}

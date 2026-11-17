@@ -1,0 +1,63 @@
+<!doctype html>
+<!-- Renders the Chrome Web Store promo images. Use render.sh, which opens
+     promo.html#small (440x280) and promo.html#marquee (1400x560). -->
+<html><head><meta charset="utf-8">
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 100%; overflow: hidden; }
+  body.small { height: 280px; } body.marquee { height: 560px; }
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    background: radial-gradient(120% 140% at 0% 0%, #0b7a6c 0%, #075E54 45%, #053f38 100%);
+    color: #fff; display: flex; align-items: center;
+  }
+  .logo { flex: none; }
+  h1 { font-weight: 700; letter-spacing: -0.02em; }
+  .tag { color: #c9f5da; }
+  .tag b { color: #25D366; font-weight: 600; }
+
+  /* small tile 440x280 */
+  body.small { padding: 0 34px; gap: 22px; }
+  .small .logo { width: 96px; height: 96px; }
+  .small h1 { font-size: 44px; line-height: 1.05; }
+  .small .tag { font-size: 18px; line-height: 1.35; margin-top: 8px; }
+  .small .mock { display: none; }
+
+  /* marquee 1400x560 */
+  body.marquee { padding: 0 110px; gap: 48px; }
+  .marquee .logo { width: 150px; height: 150px; }
+  .marquee h1 { font-size: 96px; }
+  .marquee .tag { font-size: 34px; line-height: 1.3; margin-top: 10px; }
+  .marquee .mock { display: block; margin-left: auto; }
+
+  .mock {
+    width: 400px; border-radius: 18px; background: #fff; color: #3b4a54;
+    box-shadow: 0 30px 60px rgba(0,0,0,.35); padding: 22px; font-size: 17px;
+  }
+  .search { display: flex; align-items: center; gap: 12px; background: #f0f2f5; border-radius: 10px; padding: 12px 16px; color: #111b21; }
+  .search svg { flex: none; }
+  .caret { display: inline-block; width: 2px; height: 20px; background: #008069; vertical-align: -4px; margin-left: 1px; }
+  .hint { padding: 22px 6px 6px; }
+  .hint p:first-child { font-weight: 600; color: #111b21; font-size: 19px; margin-bottom: 6px; }
+  .hint p:last-child { color: #667781; font-size: 15px; line-height: 1.4; }
+  .btn { margin-top: 16px; background: #008069; color: #fff; border-radius: 9px; padding: 12px 16px; font-weight: 600; white-space: nowrap; font-size: 16px; }
+</style></head>
+<body>
+  <svg class="logo" viewBox="0 0 128 128"><circle cx="64" cy="64" r="64" fill="#053f38"/><circle cx="64" cy="64" r="61" fill="#075E54" stroke="#0b7a6c" stroke-width="2"/><circle cx="64" cy="64" r="39" fill="none" stroke="#25D366" stroke-width="12.8"/><circle cx="64" cy="64" r="15" fill="#fff"/></svg>
+  <div>
+    <h1>Focuzap</h1>
+    <p class="tag">WhatsApp Web,<br><b>without the distractions.</b></p>
+  </div>
+  <div class="mock">
+    <div class="search">
+      <svg width="20" height="20" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="#54656f" stroke-width="2.2"/><path d="M15.5 15.5 21 21" stroke="#54656f" stroke-width="2.2" stroke-linecap="round"/></svg>
+      <span>+55 11 99999 8888<span class="caret"></span></span>
+    </div>
+    <div class="btn">Open chat with +5511999998888</div>
+    <div class="hint">
+      <p>No chat list. No badges.</p>
+      <p>Search for who you need, talk, leave. Everything else stays out of sight.</p>
+    </div>
+  </div>
+  <script>document.body.className = location.hash.slice(1) || 'small';</script>
+</body></html>
