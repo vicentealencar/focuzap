@@ -143,9 +143,23 @@
     }
   }
 
+  // 2026 layout: the side header (wordmark, Menu, New chat) is a sibling of
+  // #side instead of a child of it.
+  function tagSideHeader(side) {
+    const parent = side.parentElement;
+    if (!parent) return;
+    for (const sib of parent.children) {
+      if (sib === side || sib.tagName !== 'HEADER') continue;
+      if (sib.contains(document.getElementById('main'))) continue;
+      if (!sib.hasAttribute('data-focuzap-hide')) sib.setAttribute('data-focuzap-hide', '');
+    }
+  }
+
   // ---------- navigation rail (Status / Channels / Communities / Meta AI) ----------
 
-  const RAIL_ICONS = '[data-icon*="status"], [data-icon*="newsletter"], [data-icon*="community"], [data-icon*="channel"]';
+  // 2026 layout: rail buttons carry data-navbar-item. Older layouts: data-icon names.
+  const RAIL_ICONS =
+    '[data-navbar-item], [data-icon*="status"], [data-icon*="newsletter"], [data-icon*="community"], [data-icon*="channel"]';
 
   function tagNavRail() {
     const side = document.getElementById('side');
@@ -258,6 +272,7 @@
     ROOT.classList.toggle('focuzap-searching', query.length > 0);
 
     tagSideChildren(side, input);
+    tagSideHeader(side);
     tagNavRail();
     if (enabled) watchChatOpen(side, input, query);
 

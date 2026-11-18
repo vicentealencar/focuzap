@@ -15,9 +15,15 @@ html.focuzap-on [data-focuzap-hide] {
 
 /* Left navigation rail (Status, Channels, Communities, badges...).
    visibility instead of display so the app's grid layout doesn't shift. */
-html.focuzap-on [data-focuzap-invisible] {
+html.focuzap-on [data-focuzap-invisible],
+html.focuzap-on [data-focuzap-invisible] * {
   visibility: hidden !important;
   pointer-events: none !important;
+}
+
+/* With the side header hidden, give the search box some room at the top. */
+html.focuzap-on #side {
+  padding-top: 12px;
 }
 
 /* Filter chips (All / Unread / Favorites / Groups). */
