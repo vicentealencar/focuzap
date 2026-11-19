@@ -10,6 +10,7 @@
 </p>
 
 <p align="center">
+  <a href="https://chromewebstore.google.com/detail/focuzap/ejgjjcoifiomelijfinmfdckbpchofdh"><b>Add to Chrome</b></a> ·
   <a href="#install">Install</a> ·
   <a href="#how-it-works">How it works</a> ·
   <a href="PRIVACY.md">Privacy</a> ·
@@ -50,7 +51,7 @@ While focus mode is on:
 
 ### From the Chrome Web Store
 
-Coming soon.
+**[Add Focuzap to Chrome](https://chromewebstore.google.com/detail/focuzap/ejgjjcoifiomelijfinmfdckbpchofdh)**. Also works in Edge, Brave and other Chromium browsers.
 
 ### From source
 
